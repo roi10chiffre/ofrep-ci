@@ -1,0 +1,143 @@
+JE VEUX CREER UN SITE INTERNET J'AI PRATIQUEMENT INSTALLER LES OUTILS ET LOGIGIEL
+CONVENABLE SELON MOI COMME VSCODE ET REACT CAR MOI JE TRAIVAILLE EN REACT 
+CSS VSCODE ET JAVA SCRIPT ET SON DOM
+PEUX TU MAIDER ?
+JE VEUX CREER UN SITE DE PHOTOGRAPHIE D'UNE ORGANISATION POUR FEMMES (OFREP-CI) 
+organisation des femmes reporteur photographe de cote d'ivoire,il sagit d'un site 
+qui a pour but : 
+*informer l'opignon par la prise de vue 
+*magnifier la beauté de la nature
+*un site de reportage et a la longue basé sur la photographie et cest debourchés 
+j'ai deja cree quelques composant pour un debut
+j'ai choisit mes propres menu donc travaillez avec ceux-ci:
+ ( * Accueil.jsx  * Apropos.jsx  * Contact.jsx * Info.jsx ) que j'ai inséré dans un dossier du nom de  "components" dans le src 
+pour le css jai cree un autre dossier dans le src du nom de  "styles" dans le quel j'inseré le fichier css au nom de site.css 
+NB:
+les composant doivent etre ecrire en composant de fonction  avec cette structure  simple :
+  import React from 'react';
+  function Bonjour() {
+  return <h1>Bonjour, bienvenue sur React !</h1>;
+    }
+  export default Bonjour;
+
+
+je veux le faire sans react router pour les liens utilisez une autre methode 
+les couleurs dominate du sites sont orange blanc et vert
+avant tout mon projet est dans le dossier OFREP et porte le nom "ofrep-ci" 
+MON NODEJS EST DE VERSION v22.11.0
+MON NPM 10.9.0
+git version 2.47.0.windows.2
+notre adresse mail : ofrepci@gmail.com
+contact:
+le meme fichier css est utilisé pour tout
+
+je veux au pied de chaque page une barre avec :
+*le lien vers notre facebook inscrit dans le logo facebook (le logo est dans publique/logo)
+*le lien vers notre youtube inscrit dans le logo youtube   (le logo est dans publique/logo)
+*le lien vers notre instagram inscrit dans le logo instagram (le logo est dans publique/logo)
+*le lien vers notre ticktok inscrit dans le logo ticktok      (le logo est dans publique/logo)
+les logos ont la meme taille (petit)
+
+pour plus detailler les composants:
+Accueil pour (Accueil.jsx )
+il sagit de la page principale il contiendra:
+* en tete la barre des menus (couleur de fond = orange)
+* dans la barre des menus les differents menu avec les liens vers leur page definitive (couleur menu = blanc  et vert quand le cluseur survole)
+* dans le corps de l'acceuil un message de bienvenu sur OFREP-CI en 3 lignes ( couleur texte = orange , couleur de fond du corps=blanc)
+* toujour dans le corps de l'acceuil a la suite je veux une suite de 4 images  que j'ai dans public dans le dossier images avec une fleche pour avancer et une 
+  autre fleche pour revenir a l'image precedente et au dessu de ce cadre un texte en noir ("le top 4 de la semaine du 16 novembre au 23 novembre 2025")
+  je veux que mes 4 images puissent aussi defiler seule meme lorqu'on les touches pas les uns apres les 
+  autres avec un temps defini(couleur fleches=verte et noir au survol ,taille fleches = petit,forme fleche = rond
+  les images on la meme taille un peu grand et sont centré de sort a ne pas sortir de leur cadre 
+  les images sont un peu transparent de sort a voir peu la couleur de fond blanche de l'accueil  )
+  lorsque on click sur les images
+  la premiere image ouvre    *Lundi    pour (InfoLundi.jsx)
+  la deuxieme image ouvre   *Mardi    pour (InfoMardi.jsx)
+  la troisieme image ouvre   *Mercredi pour (InfoMercredi.jsx)
+  la quatrieme image ouvre   *Jeudi    pour (InfoJeudi.jsx)
+
+
+A propos pour (Apropos.jsx)
+  Dans apropos nous avons
+  *la description et les but de l'OFREP-CI en premier lieux
+  *un formulaire de critique avec un bouton envoyé pour permettre aux utilisateurs de critiquer et nous faire parvenir leurs critique par mail
+   dans celui-ci l'utilisateur inscrit son nom son numero de telephone apporte ses critiques et en cliquant sur envoyer nous faire parvenir 
+   les informations sur notre mail
+
+Info pour (Info.jsx) 
+   il sagit de la page clé c'est elle qui contient les informations de la semaine a balancer
+   elle contient  7 menus que j'ai inséré dans un dossier du nom de  "component_info" dans le meme dossier components du src  
+   et une barre de recherche pour triller les menus diposé tel que :
+    *la barre de recherche 
+    *Lundi    pour (InfoLundi.jsx)
+    *Mardi    pour (InfoMardi.jsx)
+    *Mercredi pour (InfoMercredi.jsx)
+    *Jeudi    pour (InfoJeudi.jsx)
+    *Vendredi pour (InfoVendredi.jsx)
+    *Samedi   pour (InfoSamedi.jsx)
+    *Dimanche pour (InfoDimanche.jsx)
+    ici les composants sont codés de la meme maniere c'est juste l'information qui change 
+    nous avons donc 
+                  -le titre de l'information (couleur = orange foncé)
+                  -la date du jour (couleur = orange ciel)
+                  -3 images aligné sur la meme ligne (les images on la meme taille et se trouvens dans public dans le dossier imagesinfo)
+                  -les imformations en paragraphe de 20 lignes
+
+
+Contact pour (Contact.jsx)
+*un message de contactez nous
+*un lien vers notre adress mail pour permettre de nous contacter par mail
+*un lient pour permettre de nous contacter par telephone
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+import React from 'react';
+function MonComposant() {
+  return <h1>Bonjour, bienvenue dans mon composant React!</h1>;
+}
+export default MonComposant;
+  
+
+
+
+
+L'application React sera disponible à l'adresse http://localhost:3000.
+
+
+waho super ! 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

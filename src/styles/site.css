@@ -1,0 +1,949 @@
+/* GLOBAL STYLES */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%; /* Assurez-vous que body prend toute la hauteur disponible */
+  background-image: url('../fond/photo7.jpg'); /* L'image de fond */
+  background-size: cover; /* L'image couvre toute la fenêtre */
+  background-position: center; /* Centrer l'image */
+  background-repeat: no-repeat; /* Pas de répétition de l'image */
+  width: 100%; /* La largeur du body prend toute la largeur de la fenêtre */
+  overflow-x: hidden; /* Eviter le défilement horizontal */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(247, 242, 242); /* Fond neutre */
+  color: #333;
+  line-height: 1.6;
+  height: 100vh;
+  background-image: url('../fond/photo7.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%; /* S'assurer que le body prend toute la hauteur de la fenêtre */
+  width: 100%; /* S'assurer que le body prend toute la largeur de la fenêtre */
+  overflow-x: hidden;
+}
+
+main {
+  flex-grow: 1; /* Permet au main de prendre tout l'espace restant */
+  padding: 20px; /* Ajoutez du padding autour de votre contenu */
+  position: relative; /* Nécessaire pour définir le z-index */
+  z-index: 1; /* S'assurer que le contenu est au-dessus de l'image */
+}
+
+/* STYLES POUR LE MENU HAMBURGER */
+.menu-toggle {
+  display: none; /* Masqué par défaut */
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  width: 40px; /* Taille agrandie du hamburger */
+  height: 30px; /* Taille agrandie du hamburger */
+  margin-left: auto;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 6px; /* Barres plus épaisses */
+  background-color: black; /* Couleur noire */
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+/* STYLES DU MENU NORMAL */
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+nav ul li {
+  cursor: pointer;
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+nav ul li:hover {
+  color: #f8a100;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  color: #f8a100; /* Couleur orange spécifique */
+}
+
+/* CENTRER LES ÉLÉMENTS */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* STYLES DE L'HEADER */
+header {
+  background-color: #f8a100; /* Fond orange */
+  padding: 10px 0;
+  color: white;
+  font-size:25px;
+  font-family:cursive;
+    font-weight:bolder;
+  text-shadow: 1px 1px 4px rgb(8, 8, 8);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height:3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+   
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  gap: 30px;
+  list-style-type: none;
+  cursor: pointer; 
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #f8a100;
+}
+header:hover {
+  background-color:rgb(253, 251, 251);
+}
+
+/* FLÈCHES DE NAVIGATION */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto; 
+  height:22rem;
+  
+}
+.carousel-container img {
+ width:69rem;
+ height: 20rem;
+ max-height: 20rem;
+}
+
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color:#f8a100;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-container button:hover {
+  background-color: #2a9d8f; /* Vert au survol */
+}
+
+.carousel-container .prev-button {
+  left: 10px;
+}
+
+.carousel-container .next-button {
+  right: 10px;
+}
+
+.carousel-container:hover button {
+  opacity: 1;
+}
+
+.carousel-image {
+  width:28rem;
+  max-height: 400px; 
+  object-fit: cover; /* Respecte la taille de l'image sans déformation */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 10s ease; /* Transition douce du zoom */
+  margin-left:4.2rem;
+  margin-top:9px;
+  
+}
+
+
+/* Zoom progressif pendant le défilement */
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05); /* Légère augmentation */
+  }
+  100% {
+    transform: scale(1); /* Retour à la taille normale */
+  }
+}
+
+/* Applique l'animation de zoom à chaque image */
+.carousel-container .carousel-image {
+  animation: zoomIn 10s infinite ease-in-out;
+}
+.carousel-container .carousel-image:hover {
+  animation: zoomIn 10s infinite ease-in-out;
+}
+
+
+
+
+
+/* STYLES DE LA PAGE ACCUEIL */
+.header-bar{
+  background-color: rgb(59, 207, 10);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-evenly;
+  height:2rem;
+  width:72rem;
+  border-radius:5px;
+
+}
+
+.header-bar img{
+ width:2rem;
+ height:2rem;
+ border-radius: 50rem;
+ border-color: black;
+ 
+}
+.header-bar img:hover{
+ border: 2px solid #f8a100;
+ 
+ }
+
+.objectif{
+  height:2rem;
+  width: 3rem;
+  border-radius: 50rem;
+}
+.menu-bienvenu{
+ display: flex;
+ flex-direction: row;
+ background-color: white;
+ justify-content: center;
+ align-items: center;
+ justify-content: space-around;
+ border-radius: 4rem;
+
+}
+.accueil {
+  padding: 10px 0;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  justify-content:space-around;
+}
+
+.accueil .welcome-message {
+  color: #fff;
+  text-shadow: 2px 2px 2px black;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom:5px;
+  margin-left:20.5rem;
+  font-family:cursive;
+  
+}
+
+.accueil .intro-text {
+  font-size: 1.2rem;
+  font-weight:bolder;
+  color:rgb(7, 7, 7);
+   text-shadow: 0px 0px 1px rgb(241, 239, 239);
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-left:18rem;
+  font-family:cursive;
+}
+
+.image-carousel {
+ background-color: #f8a100;
+  opacity:95%;
+  width:77rem;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius:9px;
+  box-shadow: 2px 2px 9px black;
+  
+  
+}
+
+.carousel-title {
+  font-size: 1.5rem;
+  color: #f7f5f2;
+  text-shadow:2px 2px 2px black;
+  margin-bottom:10px;
+  font-family:cursive;}
+
+  .image-hystory{
+    border-radius:8px;
+    height:19rem;
+    width:35rem;
+    box-shadow:2px 2px 8px rgb(7, 7, 7);
+    opacity:90%;
+  }
+  .history .wm { margin-left:28rem;}
+
+  .history1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 77rem;
+    height: 20rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    background-color: orange;
+    opacity: 90%;
+    border-radius: 10px;
+    padding: 0 1rem;
+  }
+   .titre-hystory{
+        color:black;
+        font-size:30px;
+        font-weight: bolder;
+        font-family: cursive;
+        text-shadow:0px 0px 8px rgb(252, 247, 247);
+   }
+   
+   .detailtexte-hystory{
+    color:rgb(240, 233, 233);
+    font-size:18px;
+    font-weight: bolder;
+    font-family: cursive;
+    text-shadow:2px 2px 2px black;
+
+   }
+   .detail-history1{
+    display: flex;
+    flex-direction:column;
+    border-radius:8px;
+   
+   }
+   .dh{
+    margin-left:1rem;
+   }
+
+
+
+
+
+
+
+
+
+  
+
+/* STYLES POUR (À PROPOS) */
+.apropos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  height:33rem;
+}
+.apropos-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+.apropos2{
+ font-size:20px;
+ font-weight:bolder;
+ color:rgb(7, 7, 7);
+  text-shadow: 0px 0px 1px rgb(241, 239, 239);
+  font-family:cursive;
+ 
+}
+.apropos-critique-texte{
+  font-family:cursive;
+  color: #fff;
+  text-shadow: 2px 2px 2px black;
+}
+.apropos1{
+  font-size:2rem;
+  font-weight: bolder;
+  font-family:cursive;
+  color: #fff;
+  text-shadow: 2px 2px 2px black;
+ }
+
+
+
+/* STYLES POUR LES FORMULAIRES (À PROPOS) */
+.apropos-formulaire{
+  width:100rem;
+  height:23rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content:space-around;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color:#f8a100;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+form input, form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width:50rem;
+  height:6rem;
+
+}
+
+form button {
+  background-color: #0bbd46;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  font-weight:bolder;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width:50rem;
+  height:6rem;
+  font-family: cursive;
+}
+
+form button:hover {
+  background-color: #2a9d8f;
+}
+
+
+
+button:hover {
+  background-color: #2a9d8f;
+}
+
+.carousel-container:hover button {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* STYLES DE LA PAGE INFO */
+
+
+
+
+
+.info-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.info-item h2 {
+  font-size: 2rem;
+  color: #f8a100;
+}
+
+.info-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.info-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.info-images img {
+  width: 32%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+/* STYLES DU CONTENU DE LA PAGE INFO */
+.info-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+}
+
+.info-menu div {
+  padding: 20px;
+  background-color: #f3f0f0;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-menu div h2 {
+  color: #f8a100;
+  font-size: 1.8rem;
+  font-family:cursive;
+}
+
+.info-menu div p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.info-menu div img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.info h1{
+  
+  margin-top:2rem;
+  margin-bottom:2rem;
+  color: #f7f5f2;
+  text-shadow:2px 2px 2px black;
+  font-family:cursive;}
+
+.information-texte{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ background-color:black;
+ 
+}
+
+
+
+
+
+
+/* STYLES DE LA BARRE DE RECHERCHE DANS LA PAGE INFO */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  padding: 12px;
+  font-size: 1.2rem;
+  width: 40rem;
+  height:3rem;
+  border: 2px solid #2a9d8f;
+  border-radius: 15px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  border-color: #f8a100;
+  box-shadow: 0 0 4px rgba(248, 161, 0, 0.5);
+}
+
+
+.search-container input[type="text"]:focus {
+  border-color: #f8a100; /* Orange au focus */
+  box-shadow: 0 0 8px rgba(248, 161, 0, 0.5);
+}
+
+.search-container button {
+  background-color: #2a9d8f;
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.search-container button:hover {
+  background-color: #f8a100; /* Orange au survol */
+}
+
+.search-container button:active {
+  background-color: #ff6b00; /* Orange foncé au clic */
+}
+
+
+/* STYLES DE CONTACT */
+.contact-officiel{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width:73rem;
+}
+
+
+.contact {
+ 
+  padding: 50px 20px;
+  text-align: center;
+  height:33rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+.contact h1 {
+  background-color:rgb(59, 207, 10);
+  color: #f7f5f2;
+  text-shadow:2px 2px 2px black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  height:2rem;
+  width:73rem;
+  border-radius:5px;
+}
+.contact p {
+  font-size: 2rem;
+  color: #f7f5f2;
+  text-shadow:2px 2px 2px black;
+  font-family: cursive;
+}
+
+.contact a {
+  color: #2a9d8f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+a:focus, button:focus, input:focus {
+  outline: 3px solid #f8a100; /* Donne un contour orange au focus */
+}
+:root {
+  --orange: #f8a100;
+  --green: #2a9d8f;
+  --light-bg: #f7f5f2;
+}
+
+body {
+  background-color: var(--light-bg);
+}
+
+header {
+  background-color: var(--orange);
+}
+
+.carousel-container button:hover {
+  background-color: var(--green);
+}
+
+
+:root {
+  --text-shadow: 2px 2px 2px black;
+}
+
+h1, h2, h3, .apropos-header, .accueil .welcome-message {
+  text-shadow: var(--text-shadow);
+}
+
+
+
+
+/* Media query pour tablettes (de 768px à 1024px) */
+@media (max-width: 1024px) {
+  /* Réduction des marges et des paddings */
+  body {
+    font-size: 0.95rem; /* Réduire légèrement la taille de la police */
+  }
+
+  header {
+    padding: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  .carousel-container img {
+    width: 90%; /* Réduire la taille des images dans le carrousel */
+    height: auto;
+  }
+
+  .menu-toggle {
+    display: block; /* Afficher le bouton hamburger */
+  }
+
+  nav ul {
+    display: none; /* Cacher le menu de navigation, à afficher avec le hamburger */
+  }
+
+  .menu-toggle.open + nav ul {
+    display: block; /* Afficher le menu lorsque le bouton hamburger est cliqué */
+  }
+
+  /* Ajuster les titres */
+  .carousel-title, .header-bar, .info-item h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Ajustement pour les boutons */
+  .carousel-container button {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Media query pour smartphones (moins de 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.85rem; /* Réduire la taille de la police pour les petits écrans */
+  }
+
+  header {
+    font-size: 1.1rem; /* Réduction de la taille du texte de l'en-tête */
+    padding: 5px 0;
+  }
+
+  .carousel-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .header-bar {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .menu-toggle {
+    display: flex; /* Assurez-vous que le bouton hamburger est visible */
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .menu-toggle.open + nav ul {
+    display: block; /* Afficher le menu */
+  }
+
+  .carousel-container button {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Réduction de la taille du texte dans les sections importantes */
+  .welcome-message {
+    font-size: 1.6rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .image-carousel {
+    width: 100%;
+  }
+
+  .info-item {
+    padding: 15px;
+  }
+
+  .search-container input[type="text"] {
+    width: 80%; /* Réduire la largeur de la barre de recherche */
+    font-size: 1.1rem;
+  }
+}
+
+
+/* Media query pour très petits écrans (moins de 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.8rem; /* Réduire encore la taille de la police */
+  }
+
+  header {
+    font-size: 1rem;
+    padding: 5px 0;
+  }
+
+  .carousel-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .header-bar {
+    width: 100%;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .menu-toggle {
+    width: 30px;
+    height: 25px; /* Réduire la taille du hamburger */
+  }
+
+  nav ul {
+    font-size: 0.9rem;
+  }
+
+  .carousel-container button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .welcome-message {
+    font-size: 1.3rem;
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
+  }
+
+  .info-item {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .search-container input[type="text"] {
+    width: 70%;
+    font-size: 1rem;
+  }
+
+  .search-container button {
+    font-size: 1rem;
+  }
+}
+
+
+
+body {
+  max-width: 100vw; /* S'assure que le body ne dépasse pas la largeur de l'écran */
+  overflow-x: hidden; /* Evite le défilement horizontal */
+}
+
+main {
+  max-width: 100%; /* Assure que le main ne dépasse pas la largeur */
+}
+img {
+  max-width: 100%;
+  height: auto; /* Garde l'aspect ratio des images */
+}
+.carousel-container {
+  max-width: 100%; /* Assure que le conteneur ne dépasse pas la largeur de l'écran */
+  overflow: hidden; /* Masque tout débordement de contenu */
+}
+
+/* Forcer la suppression de la barre de défilement dans certains navigateurs */
+::-webkit-scrollbar {
+  display: none; /* Masque la barre de défilement dans Chrome/Safari */
+}
+
+html, body {
+  -ms-overflow-style: none; /* Masque la barre de défilement dans Internet Explorer */
+  scrollbar-width: none; /* Masque la barre de défilement dans Firefox */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
